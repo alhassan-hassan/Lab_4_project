@@ -1,59 +1,53 @@
-#ifndef RECTBLOCKS_H_INCLUDED
-#define RECTBLOCKS_H_INCLUDED
+#ifndef RectBlocks_H_INCLUDED
+#define RectBlocks_H_INCLUDED
 
-class rectBlocks
+class RectBlocks
 {
     public:
         double width;
         double length;
         double height;
-        rectBlocks();
-        rectBlocks( double width, double length, double height);
-};
-
-
-class sqrBaseRectBlocks : public rectBlocks
-{
-    public :
-        double width;
-        double length;
-        double height;
-        sqrBaseRectBlocks();
-        sqrBaseRectBlocks(double width, double length);
-};
-
-class cylindricalBlocks : public sqrBaseRectBlocks
-{
-    public :
-        double width;
-        double length;
-        double height;
-        cylindricalBlocks();
-        cylindricalBlocks(double width, double length);
         double volume();
         double surfaceArea();
+        RectBlocks();
+        RectBlocks( double width, double length, double height);
 };
 
-class cuboidBlocks : public sqrBaseRectBlocks
-{
-    public :
-        double width;
-        double length;
-        double height;
-        cuboidBlocks();
-        cuboidBlocks(double length);
-};
 
-class sphericalBlocks : public cuboidBlocks
+class SqrBaseRectBlocks : public RectBlocks
 {
     public :
-        double width;
-        double length;
-        double height;
-        sphericalBlocks();
-        sphericalBlocks(double length);
         double volume();
         double surfaceArea();
+        SqrBaseRectBlocks();
+        SqrBaseRectBlocks(double width, double length);
 };
 
-#endif // RECTBLOCKS_H_INCLUDED
+class CylindricalBlocks : public SqrBaseRectBlocks
+{
+    public :
+        double volume();
+        double surfaceArea();
+        CylindricalBlocks();
+        CylindricalBlocks(double width, double length);
+};
+
+class CuboidBlocks : public SqrBaseRectBlocks
+{
+    public :
+        double volume();
+        double surfaceArea();
+        CuboidBlocks();
+        CuboidBlocks(double length);
+};
+
+class SphericalBlocks : public CuboidBlocks
+{
+    public :
+        double volume();
+        double surfaceArea();
+        SphericalBlocks();
+        SphericalBlocks(double length);
+};
+
+#endif // RectBlocks_H_INCLUDED
