@@ -1,0 +1,29 @@
+CXX = g++
+CFLAGS = -std=c++17 
+LDFLAGS = -lm
+
+ALL= main
+
+output: main.o cuboidBlocks.o cylindricalBlocks.o rectBlocks.o sqrBasedRectBlocks.o sphericalBlocks.o
+		${CXX} ${CFLAGS}  main.o cuboidBlocks.o cylindricalBlocks.o rectBlocks.o sqrbasedRectBlocks.o sphericalBlocks.o -o output
+
+main.o: main.cpp rectBlocks.h
+	${CXX} ${CFLAGS} -c main.cpp -I.
+
+cuboidBlocks.o: cuboidBlocks.cpp rectBlocks.h
+	${CXX} ${CFLAGS} -c cuboidBlocks.cpp -I.
+
+cylindricalBlocks.o: cylindricalBlocks.cpp rectBlocks.h
+	${CXX} ${CFLAGS} -c cylindricalBlocks.cpp -I.
+
+rectBlocks.o: rectBlocks.cpp rectBlocks.h
+	${CXX} ${CFLAGS} -c rectBlocks.cpp -I.
+
+sqrBasedRectBlocks.o: sqrBasedRectBlocks.cpp rectBlocks.h
+	${CXX} ${CFLAGS} -c sqrBasedRectBlocks.cpp -I.
+
+sphericalBlocks.o: sphericalBlocks.cpp rectBlocks.h
+	${CXX} ${CFLAGS} -c sphericalBlocks.cpp -I.
+
+clean :
+	${RM} -r *.o main
