@@ -1,5 +1,5 @@
 #include <iostream>
-#include "rectBlocks.h"
+#include "RectBlocks.h"
 #include <bits/stdc++.h>
 #include <fstream>
 #include <vector>
@@ -9,11 +9,11 @@ using namespace std;
 
 int main()
 {
-    vector<rectBlocks> rect1;
-    vector<sqrBaseRectBlocks> square;
-    vector<cuboidBlocks> cuboids;
-    vector<sphericalBlocks> spheres;
-    vector<cylindricalBlocks> cyli_blocks;
+    vector<RectBlocks> rect1;
+    vector<SqrBaseRectBlocks> square;
+    vector<CuboidBlocks> cuboids;
+    vector<SphericalBlocks> spheres;
+    vector<CylindricalBlocks> cyli_blocks;
 
 
 
@@ -23,19 +23,19 @@ int main()
     file >> width >> height>>length;
 
     while (file >> width >> height>>length){
-        rectBlocks blocks = rectBlocks(width, height, length);
+        RectBlocks blocks = RectBlocks(width, height, length);
         rect1.push_back(blocks);
 
         if (width == height) {
-            sqrBaseRectBlocks squareFamily = sqrBaseRectBlocks(width, length);
-            cylindricalBlocks cylBlock = cylindricalBlocks(width, length);
+            SqrBaseRectBlocks squareFamily = SqrBaseRectBlocks(width, length);
+            CylindricalBlocks cylBlock = CylindricalBlocks(width, length);
 
             square.push_back(squareFamily);
             cyli_blocks.push_back(cylBlock);
 
             if (height == length) {
-                cuboidBlocks cubes = cuboidBlocks(length);
-                sphericalBlocks sphere = sphericalBlocks(length);
+                CuboidBlocks cubes = CuboidBlocks(length);
+                SphericalBlocks sphere = SphericalBlocks(length);
 
                 cuboids.push_back(cubes);
                 spheres.push_back(sphere);
