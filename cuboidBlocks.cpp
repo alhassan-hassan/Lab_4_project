@@ -1,5 +1,6 @@
 #include "rectBlocks.h"
 
+//Class constructor
 cuboidBlocks :: cuboidBlocks()
 {
     this->width = 0;
@@ -7,6 +8,7 @@ cuboidBlocks :: cuboidBlocks()
     this->height = 0;
 }
 
+//Parametric constructor
 cuboidBlocks::cuboidBlocks(double length)
 {
     this->width = length;
