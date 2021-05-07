@@ -1,6 +1,7 @@
 #ifndef RectBlocks_H_INCLUDED
 #define RectBlocks_H_INCLUDED
 
+//RectBlocks class
 class RectBlocks
 {
     public:
@@ -13,7 +14,7 @@ class RectBlocks
         RectBlocks( double width, double length, double height);
 };
 
-
+//Square Prism Blocks which inherit RectBlocks class
 class SqrBaseRectBlocks : public RectBlocks
 {
     public :
@@ -23,6 +24,7 @@ class SqrBaseRectBlocks : public RectBlocks
         SqrBaseRectBlocks(double width, double length);
 };
 
+//CylindricalBlocks class which inherit SqrBaseRectBlocks class
 class CylindricalBlocks : public SqrBaseRectBlocks
 {
     public :
@@ -32,6 +34,7 @@ class CylindricalBlocks : public SqrBaseRectBlocks
         CylindricalBlocks(double width, double length);
 };
 
+//CuboidBlocks class which inherit SqrBaseRectBlocks class
 class CuboidBlocks : public SqrBaseRectBlocks
 {
     public :
@@ -41,6 +44,7 @@ class CuboidBlocks : public SqrBaseRectBlocks
         CuboidBlocks(double length);
 };
 
+//SphericalBlocks class which inherit CuboidBlocks class
 class SphericalBlocks : public CuboidBlocks
 {
     public :
