@@ -2,14 +2,14 @@
 #include <cmath>
 #include <math.h>
 
-sphericalBlocks  :: sphericalBlocks ()
+SphericalBlocks  :: SphericalBlocks ()
 {
     this->width = 0;
     this->length = 0;
     this->height = 0;
 }
 
-sphericalBlocks :: sphericalBlocks (double length)
+SphericalBlocks :: SphericalBlocks (double length)
 {
     this->width = length;
     this->height = length;
@@ -17,13 +17,13 @@ sphericalBlocks :: sphericalBlocks (double length)
 }
 
 
-double sphericalBlocks :: volume()
+double SphericalBlocks :: volume()
 {
     double volume = 4/3 *  M_PI * pow(this->width/2, 3);
     return volume;
 }
 
-double sphericalBlocks :: surfaceArea()
+double SphericalBlocks :: surfaceArea()
 {
     double surfaceArea = 4 * M_PI * pow(this->width/2, 2);
     return surfaceArea;
